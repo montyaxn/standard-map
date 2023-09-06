@@ -56,9 +56,27 @@ fn main() {
             let mut p = rng.gen::<f32>();
             for _ in 0..N {
                 p = p + k * (theta).sin();
-                theta = theta + k.cos()* p;
-                // theta = (0.9+0.8* theta.sin())* theta + k.cos()* p;
-                // theta = (1.+theta.sin())* theta + p;
+                theta = theta*(3.*k).sin() +(1.5*k).cos()* p;
+                // p = p + k * (theta).sin();
+                // theta = theta*(k/theta).sin() +(1.5*k).cos()* p; strings3
+                // p = p + k * (theta).sin();
+                // theta = theta*(1./theta).tan() + p; load
+
+                // p = p + k * (theta).sinh() + 0.3;
+                // theta = (1./theta+p).sin() + p*p.cos(); maga tama 3d
+
+                // theta = (1./theta+p).sin() + p;　strings2
+                // theta = theta*(1./theta).sin()*theta + p; octpus
+                // theta = theta*(1./theta).sin() + p; strings
+                // theta = 0.8 * theta + k.sin()* p; netflix
+                // theta = (0.9+0.8* theta.sin())* theta + k.cos()* p; 
+                // theta = (1.+theta.sin())* theta + p; wave
+                // while p > 2. * PI {
+                //     p -= 2. * PI;
+                // }
+                // while p < 0. {
+                //     p += 2. * PI;
+                // }
                 while p > PI {
                     p -= 2. * PI;
                 }
